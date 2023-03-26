@@ -423,38 +423,7 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/calbtn"
-                    android:layout_width="208dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="10dp"
-
-                    android:layout_marginEnd="2dp"
-                    android:layout_weight="1"
-                    android:text="calculate"
-                    android:textSize="16sp" />
-
-                <Button
-                    android:id="@+id/reset_btn"
-                    android:layout_width="208dp"
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginStart="2dp"
-                    android:layout_marginTop="10dp"
-
-
-                    android:layout_marginEnd="8dp"
-                    android:layout_weight="1"
-                    android:text="Reset"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
 
 
         </LinearLayout>
