@@ -292,5 +292,115 @@ public class MainActivity extends AppCompatActivity {
                     MitadTConsumption = power3*quantity3*usage3;
 
                 }
-                if(!bulb1.isChecked()&&!elic1.isChecked() && !elic2.isChecked() && !elic3.isChecked()){
+                if(!bulb1.isChecked()&&!elic1.isChecked() && !elic2.isChecked() && !elic3.isChecked()) {
                     Toast.makeText(MainActivity.this, "please fill the above value! ", Toast.LENGTH_SHORT).show();
+                }
+                    double total_Consumption;
+                    total_Consumption = MitadTConsumption + BoilerTConsumption
+                            + BulbTConsumption + OvenTConsumption;
+                    total_Consumption=total_Consumption/1000;
+                    if(total_Consumption==0.0){
+                        consumption.setText("0.0");
+                    }else{
+                        consumption.setText(Double.toString(total_Consumption )+"Kwh");
+                    }
+
+
+                    double payable=0.0;
+//               Consumption Calculation
+                    if(total_Consumption <=50){
+                        payable=total_Consumption *0.2730+10;
+
+                    } else if (total_Consumption >50&&total_Consumption <=100) {
+                        payable=total_Consumption *0.7670+42;
+                    }else if(total_Consumption >100&&total_Consumption <=200){
+                        payable= total_Consumption *1.6250+42;
+                    }
+                    else if(total_Consumption >200&&total_Consumption <=300){
+                        payable= total_Consumption *2.0000+42;
+                    }
+                    else if(total_Consumption >300&&total_Consumption <=400){
+                        payable= total_Consumption *2.2000+42;
+                    }
+                    else if(total_Consumption >400&&total_Consumption <=500){
+                        payable= total_Consumption *2.4050+42;
+                    }
+                    else if(total_Consumption >500){
+                        payable= total_Consumption *2.4810+42;
+                    }
+                    if(total_Consumption==0.0){
+                        bill.setText("0.0");
+                    }else{
+                        bill.setText(Double.toString(payable)+"Birr");
+                    }
+                }
+
+            });
+
+
+            EditText p1 = findViewById(R.id.pwr1);
+            EditText p2 = findViewById(R.id.pwr2);
+            EditText p3 = findViewById(R.id.pwr3);
+            EditText p4 = findViewById(R.id.pwr4);
+            EditText u1 = findViewById(R.id.usg1);
+            EditText u2 = findViewById(R.id.usg2);
+            EditText u3 = findViewById(R.id.usg3);
+            EditText u4 = findViewById(R.id.usg4);
+            EditText q1 = findViewById(R.id.qty1);
+            EditText q2 = findViewById(R.id.qty2);
+            EditText q3 = findViewById(R.id.qty3);
+            EditText q4 = findViewById(R.id.qty4);
+
+
+
+        reset.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    p1.setText("");
+                    p2.setText("");
+                    p3.setText("");
+                    p4.setText("");
+                    u1.setText("");
+                    u2.setText("");
+                    u3.setText("");
+                    u4.setText("");
+                    q1.setText("");
+                    q2.setText("");
+                    q3.setText("");
+                    q4.setText("");
+                    consumption.setText("0.0");
+                    bill.setText("0.0");
+
+                    bulb1.setChecked(false);
+                    elic1.setChecked(false);
+                    elic2.setChecked(false);
+                    elic3.setChecked(false);
+                    p1.setError(null);
+                    q1.setError(null);
+                    u1.setError(null);
+                    p2.setError(null);
+                    q2.setError(null);
+                    u2.setError(null);
+                    p3.setError(null);
+                    q3.setError(null);
+                    u3.setError(null);
+                    p4.setError(null);
+                    q4.setError(null);
+                    u4.setError(null);
+
+
+
+                }
+            });
+
+
+
+
+        }
+
+
+
+
+
+
+    }
