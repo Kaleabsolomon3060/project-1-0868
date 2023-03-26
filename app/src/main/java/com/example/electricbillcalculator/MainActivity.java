@@ -294,4 +294,3 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(!bulb1.isChecked()&&!elic1.isChecked() && !elic2.isChecked() && !elic3.isChecked()){
                     Toast.makeText(MainActivity.this, "please fill the above value! ", Toast.LENGTH_SHORT).show();
-                
